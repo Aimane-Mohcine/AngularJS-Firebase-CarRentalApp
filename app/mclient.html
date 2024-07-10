@@ -1,0 +1,44 @@
+
+<html ng-app="web3">
+    <head>
+<title>Modifier client</title>
+<link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <div ng-controller="client">
+        <div class="con">
+            <h2>Modifier Client</h2>
+            <fieldset>
+            <table>
+                <tr>
+                    <td>numero : </td>
+                    <td><input type="text" ng-model="numeros"></td>
+                </tr>
+                <tr>
+                    <td>Nom : </td>
+                    <td><input type="text" ng-model="noms"></td>
+                </tr>
+                <tr>
+                    <td>Prenom : </td>
+                    <td><input type="text" ng-model="prenoms"></td>
+                </tr>
+                <tr>
+                    <td>Adresse : </td>
+                    <td><input type="text" ng-model="adresses"></td>
+                </tr>
+                <tr>
+                    <td>garage : </td>
+                    <td>
+                        <select style="width: 100%;"  ng-model="selectedGarages" >
+                            <option value="">Sélectionnez une option</option>
+                            <option value="{{s.nomg}}" ng-repeat="s in garage">{{s.nomg}}</option>  
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+           
+            </table>
+            <button ng-click="updateData()"> Modifier client </button>
+        </fieldset>
+        </div>
+        

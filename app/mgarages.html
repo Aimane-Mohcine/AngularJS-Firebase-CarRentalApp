@@ -1,0 +1,27 @@
+<html ng-app="web66">
+    <head>
+<title>Modifier grages</title>
+<link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <div ng-controller="mgrage">
+        <div class="con">
+            <h2>Modifier garage</h2>
+            <fieldset>
+            <table>
+                <tr>
+                    <td>Nom : </td>
+                    <td><input type="text" ng-model="nomg"></td>
+                </tr>
+                <tr>
+                    <td>Adresse : </td>
+                    <td><input type="text" ng-model="adressg"></td>
+                </tr>
+           
+            </table>
+            <button ng-click="updateData()"> Modifier Grage </button>
+        </fieldset>
+        </div>
+        </div>
+        </body>
+        </html>

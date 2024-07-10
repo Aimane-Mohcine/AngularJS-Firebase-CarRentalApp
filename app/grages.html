@@ -1,0 +1,54 @@
+
+<html ng-app="web6">
+    <head>
+<title>Grages</title>
+<link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <div ng-controller="grage">
+        <div class="con">
+            <h2>Ajouter un nouveau garage</h2>
+            <fieldset>
+            <table>
+                <tr>
+                    <td>Nom : </td>
+                    <td><input type="text" ng-model="nomg"></td>
+                </tr>
+                <tr>
+                    <td>Adresse : </td>
+                    <td><input type="text" ng-model="adressg"></td>
+                </tr>
+           
+            </table>
+            <button ng-click="insertData()"> Add new Grage </button>
+        </fieldset>
+        </div>
+        <hr>
+        <div class="list">
+            <h1>La liste des garges </h1>
+            <input type="text"  placeholder="search..." ng-model="search"> 
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="t">
+            <table border="4" cellspacing="0" width="80%" >
+                <tr class="fi">
+                    <td>Nom</td>
+                    <td>Adresse</td>
+                    <td>Actions</td>
+                </tr>
+                <tr ng-repeat="s in garage | filter:search">
+                    <td>{{s.nomg}}</td>
+                    <td>{{s.adressg}}</td>
+                    <td>
+                    <button class="b"> <a href="#!/mgarages/{{s.$id}}"> Modifier</a></button>
+                    <button ng-click="deleteData(s)">Supprimer</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+      
+    </div> 
+    </body>
+</html>

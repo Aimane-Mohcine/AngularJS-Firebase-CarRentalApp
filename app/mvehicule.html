@@ -1,0 +1,56 @@
+<html ng-app="web2">
+    <head>
+<title>Modfier vehicule</title>
+<link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <div ng-controller="vehicule">
+        <div class="con">
+            <h2>Modifier vehicule</h2>
+            <fieldset>
+            <table>
+                <tr>
+                    <td>numero : </td>
+                    <td><input type="text" ng-model="numero"></td>
+                </tr>
+                <tr>
+                    <td>type : </td>
+                    <td><input type="text" ng-model="type"></td>
+                </tr>
+                <tr>
+                    <td>marque : </td>
+                    <td><input type="text" ng-model="marque"></td>
+                </tr>
+                <tr>
+                    <td>modele : </td>
+                    <td><input type="text" ng-model="modele"></td>
+                </tr>
+                <tr>
+                    <td>puissance : </td>
+                    <td><input type="text" ng-model="puissance"></td>
+                </tr>
+                <tr>
+                    <td>garage : </td>
+                    <td>
+                        <select style="width: 100%;"  ng-model="selectedGarage" >
+                            <option value="">Sélectionnez une option</option>
+                            <option value="{{s.nomg}}" ng-repeat="s in garage">{{s.nomg}}</option>  
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>statut : </td>
+                    <td>
+                        <select style="width: 100%;" ng-model="statut">
+                            <option value="">Sélectionnez une option</option>
+                                <option value="Disponible">Disponible</option>
+                                <option value="Loué">Loué</option>
+                              </select>
+                    </td>
+                </tr>
+           
+            </table>
+            <button ng-click="updateData()"> Modifier vehicule </button>
+        </fieldset>
+        
+        </div>

@@ -1,0 +1,107 @@
+
+<html ng-app="web7">
+    <head>
+<title>Modifier Contrat</title>
+<link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <div ng-controller="Contrat">
+            <div class="con">
+                <h2>Modifier Contrat</h2>
+                <fieldset>
+                <table>
+                    <tr>
+                        <td>Date de debut : </td>
+                        <td><input type="text" ng-model="date_d"></td>
+                    </tr>
+                    <tr>
+                        <td>Heure de debut : </td>
+                        <td><input type="text" ng-model="heur_d"></td>
+                    </tr>
+                    <tr>
+                        <td>Killometrage_debut: </td>
+                        <td><input type="text" ng-model="killometrage_d" ng-change="updateResult()" ></td>
+                    </tr>
+                    <tr>
+                        <td>Date de fin : </td>
+                        <td><input type="text" ng-model="date_f"></td>
+                    </tr>
+                    <tr>
+                        <td>Heure de fin : </td>
+                        <td><input type="text" ng-model="heur_f"></td>
+                    </tr>
+                    <tr>
+                        <td>Killometrage_fin : </td>
+                        <td><input type="text" ng-model="killometrage_f" ng-change="updateResult()" ></td>
+                    </tr>
+                    <tr>
+                        <td>distence : </td>
+                        <td><input type="text" ng-model="distence" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>Numero vehicule : </td>
+                        <td>
+                            <select style="width: 100%;"  ng-model="vehicules" >
+                                <option value="">Sélectionnez une option</option>
+                                <option value="{{s.numero}}" ng-repeat="s in vehicule">{{s.numero}}</option>  
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Numero Client: </td>
+                        <td>
+                            <select style="width: 100%;"  ng-model="clients" >
+                                <option value="">Sélectionnez une option</option>
+                                <option value="{{s.numero_client}}" ng-repeat="s in client">{{s.numero_client}}</option>  
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Paiment :</td>
+                        <td>
+                            <input type="radio" ng-model="option" name="options" value="payment_cheque" ng-change="changerOption()" id="1" checked >
+                            <label for="1">payment cheque </label><br>
+                           
+                            <input type="radio" ng-model="option" name="options" value="payment_carte" ng-change="changerOption()" id="2">
+                            <label for="2">payment carte</label>
+                        </td>
+                    </tr>
+    
+                <tr>
+                    <td>Numero : </td>
+                    <td><input type="text" ng-model="numero_fac"></td>
+                </tr>
+                <tr>
+                    <td>Date  : </td>
+                    <td><input type="text" ng-model="date_fac"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div ng-show="showForm1">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                <div ng-show="showForm2" class="aa">
+                  Date d expiration
+                  </div>
+                  </td>
+                 <td>
+                  <div ng-show="showForm2">
+                     <input type="text" ng-model="date_ex" ng-change="change()">
+                 
+                </div>
+            </td>
+        </tr>
+               
+    
+                </table>
+                <button ng-click="updateData()"> Modifier Contrat  </button>
+            </fieldset>
+            </div>
+           
+            </div>
+            </body>
+            </html>
+            

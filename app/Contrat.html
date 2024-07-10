@@ -1,0 +1,61 @@
+
+<html ng-app="web7">
+    <head>
+<title>Gestion de Contrat</title>
+<link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <div ng-controller="Contrat">
+
+            <div class="list">
+                <h1>La liste des Contrat </h1>
+                <input type="text"  placeholder="search..." ng-model="search"> 
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="t">
+                <table border="4" cellspacing="0" width="100%"  >
+                    <tr class="fi"  >
+                        <td>Numero</td>
+                        <td>Date</td>
+                        <td>Date de debut</td>
+                        <td>Heure de debut </td>
+                        <td>Killometrage_debut</td>
+                        <td>Date de fin</td>
+                        <td>Heure de fin </td>
+                        <td>Killometrage_fin</td>
+                        <td>distence</td>
+                        <td>Numero vehicule </td>
+                        <td>Numero Client</td>
+                        <td>type de payment </td>
+                        <td>  Date d expiration </td>
+                        <td>Actions</td>
+                    </tr>
+                    <tr ng-repeat="s in Contrat | filter:search">
+                        <td>{{s.numero_fac}}</td>
+                        <td>{{s.date_fac}}</td>
+                        <td>{{s.date_d}}</td>
+                        <td>{{s.heur_d}}</td>
+                        <td>{{s.killometrage_d}}</td>
+                        <td>{{s.date_f}}</td>
+                        <td>{{s.heur_f}}</td>
+                        <td>{{s.killometrage_f}}</td>
+                        <td>{{s.distence}}</td>
+                        <td>{{s.vehicules}}</td>
+                        <td>{{s.clients}}</td>
+                        <td>{{s.option}}</td>
+                        <td>{{s.date_ex}}</td>
+                        
+                        
+                        <td>
+                        <button class="b"> <a href="#!/mcontrat/{{s.$id}}"> Modifier</a></button>
+                        <button ng-click="deleteData(s)">Supprimer</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+           
+            </div>
+            </body>
+            </html>

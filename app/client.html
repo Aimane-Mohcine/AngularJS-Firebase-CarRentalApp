@@ -1,0 +1,79 @@
+
+<html ng-app="web3">
+    <head>
+<title>Gestion client</title>
+<link rel="stylesheet" href="style2.css">
+    </head>
+    <body>
+        <div ng-controller="client">
+        <div class="con">
+            <h2>Ajouter un nouveau client</h2>
+            <fieldset>
+            <table>
+                <tr>
+                    <td>numero : </td>
+                    <td><input type="text" ng-model="numeros"></td>
+                </tr>
+                <tr>
+                    <td>Nom : </td>
+                    <td><input type="text" ng-model="noms"></td>
+                </tr>
+                <tr>
+                    <td>Prenom : </td>
+                    <td><input type="text" ng-model="prenoms"></td>
+                </tr>
+                <tr>
+                    <td>Adresse : </td>
+                    <td><input type="text" ng-model="adresses"></td>
+                </tr>
+                <tr>
+                    <td>garage : </td>
+                    <td>
+                        <select style="width: 100%;"  ng-model="selectedGarages" >
+                            <option value="">Sélectionnez une option</option>
+                            <option value="{{s.nomg}}" ng-repeat="s in garage">{{s.nomg}}</option>  
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+           
+            </table>
+            <button ng-click="insertData()"> Add new client </button>
+        </fieldset>
+        </div>
+        <hr>
+        <div class="list">
+            <h1>La liste des client </h1>
+            <input type="text"  placeholder="search..." ng-model="search"> 
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="t">
+            <table border="4" cellspacing="0" width="80%" >
+                <tr class="fi">
+                    <td>numero </td>
+                    <td>Nom</td>
+                    <td>Prenom </td>
+                    <td>Adresse</td>
+                    <td>garage</td>
+                    <td>Actions</td>
+                </tr>
+                <tr ng-repeat="s in client | filter:search">
+                    <td>{{s.numero_client}}</td>
+                    <td>{{s.Nom_client}}</td>
+                    <td>{{s.Prenom}}</td>
+                    <td>{{s.Adresse__client}}</td>
+                    <td>{{s.selectedGarages}}</td>
+                    
+                    <td>
+                    <button class="b"> <a href="#!/mclient/{{s.$id}}"> Modifier</a></button>
+                    <button ng-click="deleteData(s)">Supprimer</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+     
+    </div> 
+    </body>
+</html>

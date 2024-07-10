@@ -1,0 +1,35 @@
+    <html ng-app="webApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+        <script src="log/login.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-auth.js" async></script>
+        <script>
+            var config = {
+    apiKey:  "AIzaSyA980owkVHzVsF7WmGvU0b2vHYAqvqkIsU",
+    authDomain:"test-632a1.firebaseapp.com",
+    databaseURL:  "https://test-632a1-default-rtdb.firebaseio.com",
+    projectId: "test-632a1",
+    storageBucket:  "test-632a1.appspot.com",
+    messagingSenderId: "457802789136",
+    appId: "1:457802789136:web:0e8b47414c5deecc0df595"
+    };
+    firebase.initializeApp(config);
+        </script>
+         <link rel="stylesheet" href="log/style1.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <h2>Location de voiture</h2>
+            <ul>
+           <li><a href="#!/log/signin">Sign In </a></li> 
+            <li><a href="#!/log/signup"> Sign Up</a></li>
+        </ul>
+        </div>
+
+        <div ng-view></div>
+    </body>
+</html>
+       
